@@ -1,0 +1,802 @@
+/*
+HTML & CSS II
+
+Advanced HTML/CSS
+    In this lesson, we'll be developing a modern web page like the one below.
+    Get ready to gain a lot of new knowledge that is essential in web development!
+*/
+
+/*
+The Top Layout
+    Next we'll be working on the top section.
+    Check out the HTML layout in the image below.
+
+background-image
+    The top section has an image in the background.
+    We can specify this with CSS using the background-image property, like background-image: url(URL);.
+
+background-size
+    The image specified with background-image will repeat itself until it fills the whole space.
+    If you want to fill it with a single image, you can specify background-size: cover;.
+
+Centering the Elements
+   Let's horizontally center the container class.
+    We can do this by specifying the left and right margins to auto.
+    Note that you must also specify the width when doing so.
+    You don't have to understand the meaning of the container class for now, but it will come in handy in the lessons to come.
+*/
+div {
+    height: 200px;
+    background-image: url(top.png);              /* display a background image */
+    background-size: cover;                      /* fills the background with a single image */
+}
+
+h1 {
+    color:white;
+}
+
+.box {
+    width: 300px;
+    margin: 0 auto;             /* top+bottom left+right */
+}
+
+/* EXMAPLE */
+.container {
+    width: 1170px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+.top-wrapper {
+    padding-top: 180px;
+    padding-bottom: 100px;
+    color: white;
+    background-image: url(https://prog-8.com/images/html/advanced/top_en.png);
+    background-size: cover;
+  }
+
+## CHECK HTML code ON HTML & CSS II.html ##
+
+/*
+Opacity and Letter Spacing
+    Comparing our web page with the final product, we can see the following differences. In the final product,
+    ・The letters are transparent
+    ・There is more space between the letters of "LEARN TO CODE."
+
+opacity
+    To make an element transparent, you can use the opacity property.
+    You can specify a value between 0.0 and 1.0, 0.0 being the most transparent.
+
+letter-spacing
+    The letter-spacing property can be used to specify the space between the letters.
+*/
+
+/* Add CSS for <h1> tags within top-wrapper */
+.top-wrapper h1 {
+    opacity: 0.7;
+    font-size: 45px;
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+  }
+  
+  /* Add CSS for <p> tags within top-wrapper */
+  .top-wrapper p {
+    opacity: 0.7;
+    margin-bottom: 3px;
+  }
+
+## CHECK HTML code ON HTML & CSS II.html ##
+
+/*
+Creating Buttons
+    Now let's create some buttons using <a> tags.
+    Since the <a> tag is an inline element, we can't specify its size and space.
+    Let's find out how to solve this.
+
+Inline-block Elements
+    Inline-block elements have the characteristics of both block-level elements and inline elements.
+    Like inline elements, they will be aligned horizontally, but you can also specify their size and spacing, like block elements.
+
+display
+    <a> tags are inline elements by default, but you can use the display property to change this.
+    The display property can have block, inline-block or inline specified.
+
+Specifying Multiple Classes
+    If you have several elements that have slightly different CSS, you can extract the common CSS and the individual CSS to different classes, and specify them both.
+    You can specify multiple classes by separating them with a space.
+*/
+
+.btn {
+    /* common css */
+}
+
+.blue {
+    color: blue;
+}
+
+.red {
+    color: red;
+}
+
+/* EXAMPLE */
+
+/* Add CSS for btn */
+.btn {
+    padding: 12px 24px;
+    color: white;
+    display: inline-block;
+    opacity: 0.8;
+  }
+  
+  /* Add CSS for signup */
+  .signup {
+    background-color: #239b76;
+  }
+  
+  /* Add CSS for facebook */
+  .facebook {
+    background-color: #3b5998;
+    margin-right: 10px;
+  }
+  
+  /* Add CSS for twitter */
+  .twitter {
+    background-color: #55acee;
+  }
+  
+  /* Add CSS for btn-wrapper */
+  .btn-wrapper {
+    margin: 20px 0;
+  }
+  
+  /* Add CSS for <p> tags inside btn-wrapper */
+  .btn-wrapper p {
+    margin: 10px 0;
+  }
+
+/*
+Adjusting the Layout
+    Let's adjust the layout of the top section by focusing on the following:
+    ・Changing the button color when the cursor is hovering over it
+    ・Making the corners of the buttons rounded
+    ・Aligning the text to the center
+
+:hover
+    When the cursor is on an element, the element is in the hover state.
+    By adding the :hover selector as shown below, we can specify the CSS for when an element is in the hover state.
+    Make sure you do not put spaces on either side of the :.
+
+border-radius
+    We use the border-radius property to round the corners of elements. The larger the number, the rounder the corners become.
+
+text-align
+    The text-align property lets you align inline and inline-block elements.
+    Values left, center, or right can be specified.
+
+margin: 0 auto and text-align: center
+    We learned that both margin: 0 auto and text-align: center can be used to center elements. 
+    Let's look at the differences between the two. We use margin for block-level elements like containers, and text-align for inline and inline-block elements like buttons and text.
+*/
+
+div:hover {                             /* style a <div> when a cursor is on it */
+    background-color: red;
+}
+
+.box {
+    width: 200px;
+    height: 100px;
+    background-color: orange;
+    border-radius: 10px;                /* apply  round corners with a 10px radius. */
+    text-align: left;                   /* text values left */
+    text-align: center;                 /* text values center */
+    text-align: right;                  /* text values right */
+}
+
+/* EXAMPLE */
+
+.top-wrapper {
+  padding: 180px 0 100px 0;
+  background-image: url(https://prog-8.com/images/html/advanced/top_en.png);
+  background-size: cover;
+  color: white;
+  /* Change the text-align property to center */
+  text-align: center;
+}
+
+.btn {
+    padding: 12px 24px;
+    color: white;
+    display: inline-block;
+    opacity: 0.8;
+    /* Change the border-radius to 4px */
+    border-radius: 4px;
+}
+  
+  /* Add CSS for btn on hover */
+  .btn:hover {
+    opacity: 1;
+}
+
+/*
+Using Icons
+    Let's add icons to our buttons like in the image below.
+
+Font Awesome
+    You can easily add icons by using Font Awesome.
+    It has a lot of icons that you can use in your web page.
+    Check out https://fontawesome.com/ for the list of icons that you can use.
+
+Using Font Awesome
+    You can use Font Awesome in the following steps.
+    1. Load the Font Awesome CSS inside the <head> tag
+    2. Add a <span> tag with the classes fa and fa-icon-name
+    (You can find the icon name in the Font Awesome page.)
+*/
+
+/* Change fa's margin-right to 5px */
+.fa  {
+    margin-right: 5px;
+  }
+  
+
+/*
+The Header Layout
+    Let's move on to the header section.
+    The HTML layout is shown in the image below.
+    Note that the background color of the header is slightly transparent.
+
+opacity and rgba
+    We've previously used opacity to make an element transparent.
+    But the problem with opacity is that it makes the entire element transparent, including all the child elements.
+    If we only want the background color to be transparent, we can use rgba.
+
+rgb
+    To learn about rgba, we must first understand the rgb.
+    rgb is a way to specify the color with a combination of three values.
+    It works just like the hexadecimal format (e.g. #ffffff) that we've learned before.
+
+rgba
+    rgba is used when you want to specify the transparency of the color.
+    You specify four values for rgba, and the fourth value specifies the transparency from 0.0 to 1.0, 0.0 being the most transparent.
+    The example below shows the difference between rgba and opacity.
+*/
+
+.box1 {
+    background-color: rgb(73, 201, 192);
+}
+
+.box2 {
+    background-color: #49c9c0       /* same color with top */
+}
+
+------------------------------
+
+.rgba-sample {
+    background-color: rgba(84, 190, 238, 0.5);              /* red green blue alpha(transparancy) */
+}
+
+.opacity-sample {
+    background-color: rgb(84, 190, 238);            /* same with top */
+    opacity: 0.5;
+}
+
+/* EXAMPLE */
+
+/* Add CSS for <header> tags */
+header {
+    height: 65px;
+    width: 100%;
+    background-color: rgba(34, 49, 52, 0.9);
+  }
+  
+  
+  /* Add CSS for logo */
+  .logo {
+    width: 124px;
+    margin-top: 20px;
+  }
+
+/*
+Creating a Login Link
+    Now we'll work on the login link.
+*/
+
+/* Add CSS for header-left */
+.header-left {
+    float: left;
+  }
+  
+  /* Add CSS for header-right */
+  .header-right {
+    float: right;
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Add CSS for header-right on hover */
+  .header-right:hover {
+    background-color: rgba(255, 255, 255, 0.5)
+  }
+
+/*
+Improving the Login Link
+    Let's improve the login link by:
+    ・Adding some animation to the hover.
+    ・Vertically centering the Log in text.
+
+transition
+    The transition property can be used to add animations.
+    You can specify the target and the duration of the animation.
+    The target can be a property, like color, but we often just specify all so it applies to all properties.
+    transition is often used with the hover selector.
+
+line-height
+    The line-height property can be used to specify the height that the line occupies.
+
+Using line-height to Vertically Center Text
+    line-height can also be used to vertically center text.
+    Since the text will be placed in the center of the line-height, specifying the same value for the height and the line-height will vertically center the text inside.
+
+Expanding the <a> Tag
+    Since the <a> tag is an inline element, it only occupies the space of the text. As a result, we can only click the text area of the button.
+    We can fix this by making the <a> tag a block element, which spreads to the size of its parent element.
+*/
+
+div {
+    transition: all 1s;             /* target duration*/
+}
+
+div:hover {
+    background-color: red;
+}
+
+.btn {
+    height: 65px;
+    line-height: 65px;              /* if not using these, text not vertically align in the center */
+}
+
+/* EXAMPLE */
+
+.header-right {
+    float: right;
+    background-color: rgba(255, 255, 255, 0.3);
+    /* Change the transition property */
+    transition: all 0.5s;
+}
+
+/* Add CSS for <a> tags inside header-right */
+.header-right a {
+    line-height: 65px;
+    padding: 0px 25px;
+    color: white;
+    display: block;
+}
+
+/*
+The Lesson List Layout
+    Let's move on to the lesson list section.
+    The HTML layout is shown in the image below.
+    We'll also be learning how to change the thickness of the text.
+
+font-weight
+    The font-weight property lets you change the thickness of the text.
+    You can specify values like normal and bold.
+    Since <h1>~<h6> tags have font-weight: bold; specified by default, you can specify font-weight: normal; to change them back to normal.
+*/
+
+/* Add CSS for lesson-wrapper */
+.lesson-wrapper {
+    height: 500px;
+    padding-bottom: 80px;
+    background-color: #f7f7f7;
+  }
+  
+  
+  /* Add CSS for heading */
+  .heading {
+    padding-top: 60px;
+    padding-bottom: 30px;
+    color: #5f5d60;
+  }
+  
+  
+  /* Add CSS for <h2> tags inside heading */
+  .heading  h2 {
+    font-weight: normal;
+  }
+
+## CHECK HTML code ON HTML & CSS II.html ##
+
+/* 
+Aligning the Lessons
+Now let's work on the lessons section.
+Each lesson has a width of 25%.
+
+Specifying the Size With %
+By using % instead of px, we can calculate the width based on its parent element's width. The same applies for the height property.
+
+The Layout of the Lesson
+The HTML layout of each lesson is shown in the image below.
+*/
+
+/* Add CSS for lesson */
+.lesson {
+    float: left;
+    width: 25%;
+  }
+
+## CHECK HTML code ON HTML & CSS II.html ##
+
+/*
+Overlapping Elements
+    Now let's adjust the layout of each lesson part.
+    Normally in HTML, the elements never overlap.
+    But you can do this by adding some CSS.
+    In this exercise, we'll learn how to place some text on top of an image.
+
+position: absolute;
+    You can use position: absolute; to make the elements overlap.
+    With position: absolute; you can specify the position relative to the top-left corner of the web page, using the top and left properties.
+
+position: relative;
+    You can change the reference point for position: absolute
+    by specifying position: relative; to an ancestor element.
+    This way, the element with position: absolute specified will be positioned relative to the top-left corner of the ancestor element.
+*/
+
+/* Add CSS for lesson-icon */
+.lesson-icon {
+    position: relative;
+  }
+  
+  
+  /* Add CSS for <p> tags inside lesson-icon */
+  .lesson-icon p {
+    position: absolute;
+    top: 90px;
+    width: 100%;
+    color: white;
+  }
+  
+  
+  /* Add CSS for txt-contents */
+  .txt-contents {
+    width: 80%;
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 15px;
+    color: #b3aeb5;
+}
+
+## CHECK HTML code ON HTML & CSS II.html ##
+
+/*
+The Message Layout
+    Let's move on to the message section.
+    The HTML layout is shown in the image below.
+*/
+
+/* Add CSS for message */
+.message {
+    padding: 15px 40px;
+    background-color: #5dca88;
+  }
+  
+  
+  /* Add CSS for <h3> tags inside heading */
+  .heading h3 {
+    font-weight: normal;
+}
+
+## CHECK HTML code ON HTML & CSS II.html ##
+
+/*
+Creating a 3D Button
+    Let's learn how to make the button look 3D by adding shadows to it.
+    We'll also be learning how to change the mouse pointer type.
+
+box-shadow
+    The box-shadow property is used to add shadows to elements.
+    We can use it by specifying its horizontal length, vertical length, and the color.
+
+cursor
+    The cursor property can be used to change the type of the mouse pointer, like in the image below.
+    Some HTML tags like the <a> tag have the cursor property set to pointer by default.
+*/
+
+.box {
+    box-shadow: 10px 10px #000;         /* horizontal vertical color*/
+}
+
+/* EXAMPLE */
+
+/* Add CSS for message-wrapper */
+.message-wrapper {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 80px;
+    text-align: center;
+  }
+  
+  
+  .message {
+    padding: 15px 40px;
+    background-color: #5dca88;
+    /* Change the cursor property to pointer */
+    cursor: pointer;
+    /* Change the box-shadow property */
+    box-shadow: 0 7px #1a7940;
+  }
+
+/*
+Pressing a Button
+    Let's add some more CSS to the button to make it look like it's been pressed when you click on it.
+    We can do this by doing the following things when the button is clicked.
+    ・Remove the shadow
+    ・Lowering the button by the length of the shadow
+
+:active
+    The :active selector can be used to add CSS for when an element is being clicked, like in the example below.
+
+Canceling CSS
+    You can remove the shadow by specifying box-shadow: none;.
+    Many CSS properties can be canceled by specifying none.
+
+Usage of position: relative;
+    We previously learned how to use position: relative; with position: absolute;, but its actual role is to position the element relative to its normal position.
+    Like position: absolute;, you use the top and left properties.
+
+Pressing a Button
+    We'll add the following CSS to make the button look like it's been pressed.
+    ・Set box-shadow to none
+    ・Use position: relative; with top to lower the element by the length of the shadow
+*/
+
+/* Add CSS for message when it's clicked */
+.message:active {
+    box-shadow: none;
+    position: relative;
+    top: 7px;
+}
+
+/*
+The Footer Layout
+    Now let's work on the footer.
+    The HTML layout is shown in the image below.
+*/
+
+/* Add CSS for <img> tags inside the <footer> */
+footer img {
+    width: 125px;
+}
+  
+  /* Add CSS for <p> tags inside the <footer> */
+  footer p {
+    color: #b3aeb5;
+    font-size: 12px;
+}
+  
+  /* Add CSS for <footer> tags */
+  footer {
+    padding-top: 30px;
+}
+
+## CHECK HTML code ON HTML & CSS II.html ##
+
+/*
+Fixing the Header
+    To finish off, let's learn how to fix an element to a certain position, so that we can keep the header at the top even when you scroll down.
+
+Fixing the Position of an Element
+    We can use position: fixed; to fix an element to a certain position of the screen. We can specify it by combining it with the top and left properties.
+
+The Stack Order of Elements
+    We learned that we use the position property to make the elements overlap, but sometimes they won't be stacked in the desired order.
+    In the image below, the icon images are stacked on top of the header.
+    Let's learn how to fix this.
+
+z-index
+    The z-index property lets you change the stack order of the elements.
+    The element with the greater z-index will be displayed on top.
+    Keep in mind that the z-index property will only take effect when combined with the position property.
+*/
+
+header {
+    height: 65px;
+    width: 100%;
+    background-color: rgba(34, 49, 52, 0.9);
+    /* Change the position property to fixed, and top property to 0 */
+    position: fixed;
+    top: 0;
+    /* Change the z-index property to 10 */
+    z-index: 10;
+}
+
+/* HTML & CSS I END CODE */
+
+body {
+    margin: 0;
+    font-family: "Lucida Grande";
+}
+  
+a {
+    text-decoration: none;
+}
+  
+.container {
+    width: 1170px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+  
+.top-wrapper {
+    padding: 180px 0 100px 0;
+    background-image: url(https://prog-8.com/images/html/advanced/top_en.png);
+    background-size: cover;
+    color: white;
+    text-align: center;
+}
+  
+.top-wrapper h1 {
+    opacity: 0.7;
+    font-size: 45px;
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+}
+  
+.top-wrapper p {
+    opacity: 0.7;
+    margin-bottom: 3px;
+}
+  
+.btn-wrapper {
+    margin: 20px 0;
+}
+  
+.btn-wrapper p {
+    margin: 10px 0;
+}
+  
+.signup {
+    background-color: #239b76;
+}
+  
+.facebook {
+    background-color: #3b5998;
+    margin-right: 10px;
+}
+  
+  .twitter {
+    background-color: #55acee;
+}
+  
+.btn {
+    padding: 12px 24px;
+    color: white;
+    display: inline-block;
+    opacity: 0.8;
+    border-radius: 4px;
+}
+  
+.btn:hover {
+    opacity: 1;
+}
+  
+.fa {
+    margin-right: 5px;
+}
+  
+header {
+    height: 65px;
+    width: 100%;
+    background-color: rgba(34, 49, 52, 0.9);
+    /* Change the position property to fixed, and top property to 0 */
+    position: fixed;
+    top: 0;
+    
+    /* Change the z-index property to 10 */
+    z-index: 10;
+}
+  
+.logo {
+    width: 124px;
+    margin-top: 20px;
+}
+  
+.header-left {
+    float: left;
+}
+  
+.header-right {
+    float: right;
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: all 0.5s;
+}
+  
+.header-right:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+  
+.header-right a {
+    line-height: 65px;
+    padding: 0 25px;
+    color: white;
+    display: block;
+}
+  
+.lesson-wrapper {
+    height: 500px;
+    padding-bottom: 80px;
+    background-color: #f7f7f7;
+    text-align: center;
+}
+  
+.heading {
+    padding-top: 60px;
+    padding-bottom: 30px;
+    color: #5f5d60;
+}
+  
+.heading h2 {
+    font-weight: normal;
+}
+  
+.lesson {
+    float: left;
+    width: 25%;
+}
+  
+.lesson-icon {
+    position: relative;
+}
+  
+.lesson-icon p {
+    position: absolute;
+    top: 90px;
+    width: 100%;
+    color: white;
+}
+  
+.txt-contents {
+    width: 80%;
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 15px;
+    color: #b3aeb5;
+}
+  
+.heading h3 {
+    font-weight: normal;
+}
+  
+.message-wrapper {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 80px;
+    text-align: center;
+}
+  
+.message {
+    padding: 15px 40px;
+    background-color: #5dca88;
+    cursor: pointer;
+    box-shadow: 0 7px #1a7940;
+}
+  
+.message:active {
+    position: relative;
+    top: 7px;
+    box-shadow: none;
+}
+  
+footer img {
+    width: 125px;
+}
+  
+footer p {
+    color: #b3aeb5;
+    font-size: 12px;
+}
+  
+footer {
+    padding-top: 30px;
+}

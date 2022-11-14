@@ -1,0 +1,115 @@
+/* HTML & CSS flexbox*/
+
+/*
+Flexbox
+    In this lesson, you'll learn about the CSS layout module, Flexbox.
+    While this module has many properties, you'll focus on the most commonly used ones.
+    Flexbox is really useful, so get going and add this to your skillset!
+
+What is Flexbox?
+    a CSS layout module
+    Up until now, we've used float for aligning items horizontally. However, now we can use Flexbox to achieve the same thing more efficiently.
+
+What Flexbox Can Do
+    With Flexbox, you can easily create different layouts as shown below.
+
+Creating a Horizontal Layout
+
+What is display: flex?
+    Setting display: flex on an element will horizontally stack its children.
+*/
+
+.flex-list {
+    display: flex;
+}
+
+/*
+Creating a Horizontal Layout
+What is flex: auto?
+    When you set flex: auto on an element, it will expand to fill as much space as it can within the parent.
+
+How to use flex: auto
+    If you have an element that you want to expand as much as it can within the parent element, set flex: auto on it.
+*/
+
+.flex-list li {
+    flex: auto;
+    flex-wrap: wrap;
+}
+
+/*
+Wrapping the Elements Into Two Rows
+What is flex-wrap: wrap?
+    By setting flex-wrap: wrap, a single row of elements will be able to wrap into multiple rows based on the element size.
+
+How to use flex-wrap: wrap
+    Set flex-wrap: wrap on the parent of the elements that should be wrapped. The elements themselves will need to have the width set. 
+    This time, since we want to break the list into two rows, we'll set width: 50%.
+
+Review of Percentage Size
+    Let's review using a percentage for the size of an element. 
+    When using a percentage % for the height or width of an element, the size of the element will become relative to the size of its parent.
+
+
+*/
+.flex-list {
+    display: flex;
+}
+
+.flex-list li {
+    flex: auto;
+    width: 50%;
+}
+
+/*
+Wrapping on Smaller Screens
+Using Media Queries
+To make a site responsive, we'll use media queries, which we have covered in HTML Study III. We can make it so that the list only wraps when the screen width is small.
+*/
+
+/* Layout for Tablet Devices */
+/* Set a media query with a breakpoint at 1000px and smaller */
+@media (max-width: 1000px ) {
+    /* Set the flex-wrap of .flex-list */
+    .flex-list {
+      flex-wrap: wrap;
+    }
+    
+    /* Set the width of the .flex-list li to 50% */
+    .flex-list li {
+      flex: auto;
+      width: 50%;
+    }
+    
+  }
+
+/*
+Using One Column for the Smallest Screens
+What is flex-direction: column?
+Setting flex-direction: column makes all elements stack vertically instead of horizontally.
+
+How to use flex-direction: column
+For elements that you want to stack vertically, set flex-direction: column on their parent element.
+
+Centering Block Elements
+Let's review how to center block elements. By setting margin: 0 auto and the width of an element, you can center it. 
+Since we've already set the width of the elements for screens 1000px and under, we only need to set the margin here.
+
+Using Media Queries
+By using media queries, we can make it so that the list becomes a single column on the smallest of screen sizes.
+*/
+
+/* Layout for Smartphone Devices */
+/* Set the breakpoint to 670px and under for the media query */
+@media (max-width: 670px) {
+    /* Set the flex-direction of .flex-list */
+    .flex-list {
+      flex-direction: column;
+    }
+    
+    /* Set the margin of the .flex-list li to 0 auto */
+    .flex-list li {
+      margin: 0 auto;
+    }
+    
+  }

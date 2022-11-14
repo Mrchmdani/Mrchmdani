@@ -1,0 +1,492 @@
+/* 
+HTML & CSS I
+
+Getting Started with HTML & CSS
+  Welcome to the exciting world of HTML & CSS!
+  In this lesson, we're going to create the website displayed in the image below.
+  It may look difficult, but don't worry! We'll guide you every step of the way.
+*/
+
+/* 
+What is CSS?
+    CSS is used to design a website. With CSS, you can change things like the color, size, and spacing of HTML elements.
+    The page on the left is comprised of only HTML.
+    By applying CSS, you can style it like the layout shown on the right.
+
+How CSS Works
+    CSS is written in a separate file from HTML.
+    You can apply CSS to HTML elements by specifying "where," "what," and "how" you want to change it.
+    In the example below, CSS is applied to an <h1> element (the "where") and its color (the "what") is changed to red (the "how").
+    The target HTML element is called the selector.
+
+Colors
+    Let's learn about the color property!
+    In CSS, colors are specified by hexadecimal values like color: #ff0000;.
+    You don't need to remember the values, but you can search online for other colors if you're interested.
+
+CSS Syntax
+    There are a few things to keep in mind when writing CSS.
+    Just like HTML, you should always indent CSS code as shown below.
+    Also, note that it is necessary to add a colon : at the end of a CSS property and a semicolon ; at the end of the line.
+
+CSS Comments
+    Just as you did in HTML, you can write comments in a CSS file.
+    In CSS, however, a comment should be surrounded by. 
+
+##HTML##
+<h1>This is h1.</h1>
+<p>This is p.</p>
+
+*/
+
+h1 {
+    color: #ff0000;
+}
+
+p {
+    color: #0000ff;
+}
+
+/*
+Font Size
+    The size of a font can be set with the font-size property.
+    A common unit for setting the font-size is px (pixel).
+
+Font Family
+    With the font-family property, you can specify the type of font.
+    You can do this by setting font-family: font name;.
+    If the font name contains a space, you need to surround it with double quotes.
+
+    Variety of Fonts
+    When setting the font-family property, you can specify various font types such as "serif" and "sans-serif".
+    You don't have to memorize the name of the fonts.
+*/
+h1 {
+    font-size: 10px;
+    font-family: serif;
+}
+p {
+    font-family: "Avenir Next"
+}
+
+/*
+Background Colors
+    The background-color property allows you to change the background color. You can set the background color just like the color property.
+    In addition, if the same letter continues like #dddddd, it can be shortened to #ddd.
+
+Width and Height
+    To change the width and height of an element, use the width property and height property, respectively. 
+    Both of these can be specified with px. As with the font-size, don't forget to put the px!
+*/
+h1 {
+    width: 500px;
+    height: 80px;
+    background-color: #dddddd;
+}
+
+p {
+    background-color: #ffd800;
+}
+
+img {
+    width: 500px;
+    height: 200px;
+}
+
+/*
+Applying CSS to a certain element
+    When there are multiple <li> elements in your code, applying CSS like the image below would turn all the <li> elements red.
+    So, how do we change only one of the <li> elements to red?
+
+Labeling Tags
+    You can achieve this by labeling elements using the class attribute.
+    By adding a class to an HTML tag, you can differentiate each element and apply different CSS.
+    When applying CSS to a class selector, note that a period . is required in front of the class name.
+
+Applying CSS to Multiple Tags
+    If you assign the same class name to multiple HTML elements, the same CSS applies to all of them.
+
+Syntax for Classes
+    As noted before, class selector names always start with a period.
+    If you forget the period, the CSS will not be applied.
+    Note that CSS class selectors start with a period, but tags do not.
+*/
+.selected {
+    color:red;
+}
+
+/*
+Your First Website
+    Now it's time to create your first website!
+    Check out the image below to get an idea of what you'll create.
+
+The Structure of HTML
+    In an actual HTML document, there are some rules you need to follow.
+    For example, the <head> and the <body> elements are required in the <html> element (※ See the image on the left).
+    The <head> element contains information of the document while the <body> element contains the contents that are visible in the browser.
+
+Specifying the HTML Version
+    In every HTML document, you need to start with the DOCTYPE declaration, which indicates the specific HTML version for your website.
+    We'll be using <!DOCTYPE html>, which is for HTML, the latest version of HTML. Don't worry too much about the specific type, just remember that it's something you always have to specify.
+
+<head> Tag
+    The <head> element contains the settings of the HTML document that are not visible in the browser.
+    There are three elements you need to put in the <head> element.
+    We will take a look at each one of them in the next lesson.
+*/
+body {
+    font-family: "Avenir Next";
+}
+
+/*
+The Layout
+    Layout is one of the most important parts of building a website.
+    The layout of the website we're going to build is made up of mainly three parts as shown in the image below.
+    Let's get started!
+
+<div> Tag
+    We're going to create the layout with <div> elements (※ "div" stands for "division").
+    The <div> tag is used to group elements.
+    In the example below, the layout is divided by three <div> elements with class names header, main, and footer.
+*/
+
+body {
+    font-family: "Avenir Next";
+  }
+  
+  /* Change header's background-color to #f7f2b4, and height to 90px */
+  .header {
+    background-color:#f7f2b4;
+    height:90px;
+  }
+  
+  /* Change main's background-color to #bdf7f1, and height to 600px */
+  .main {
+    background-color:#bdf7f1;
+    height: 600px;
+  }
+  
+  /* Change footer's background-color to #ceccf3, and height to 270px */
+  .footer {
+    background-color:#ceccf3;
+    height: 270px;
+  }
+
+/*
+The Header
+  Now that the basic layout is complete, let's work on some details.
+  We're first going to make a header like the one below.
+
+The Structure of the Header
+  Let's check out the structure of the header.
+  There is a "Progate" logo and a list.
+  Let's group these two parts using the <div> element as shown below.
+  
+Removing the Bullets from List Items
+  By applying the list-style property on an <li> element, you can remove the bullet points.
+  Since we don't want bullets for our list, let's set the list-style to none.
+*/
+li {
+    list-style: none;
+}
+
+/*
+    Aligning the Header Horizontally
+    Generally, elements written in HTML are vertically aligned.
+    To horizontally align them, we need CSS.
+    Next, we'll learn how to create the layout shown below on the right.
+
+    The Float Property
+    Using the float property, you can align targeted elements horizontally. As shown in the examples, specifying float: left; will arrange elements side by side from left to right.
+
+    Aligning List Item Side by Side
+    Let's start arranging the list items in the header side by side.
+    By applying float: left; to every <li> element, you can align them horizontally from left to right.
+
+    Aligning the Logo and the List
+    Next, let's place the header logo and the entire list side by side.
+    By applying float: left; to the header-logo as shown below, you can horizontally align the logo and the entire list.
+*/
+li {
+    list-float: left;
+}
+
+/*
+    Adjusting Spaces
+    Let's adjust the spaces between the elements in the header so that both the logo and header list are placed in the appropriate positions as shown below.
+
+    Adding Space to an Element
+    When you want to add some space to an element, the padding property comes in handy. By applying padding: 〇〇px;, the specified space is added to all sides of an element.
+
+    Applying Padding to Only One Side
+    You may want to add padding to only one side of an element instead of all sides. In that case, you can apply padding independently by using properties like padding-top and padding-bottom.
+    For example, to add the top padding, set padding-top: 〇〇px;.
+
+    Padding Shorthand
+    You can use shorthand when applying padding.
+    You can apply padding to multiple sides using only one property.
+    When four values are defined, padding is applied clockwise from the top. When two values are defined, padding is applied in the order of "top / bottom" and "right / left".
+*/
+logo1 {
+    padding: 20px                      /*add 20px paddling to all sides*/
+        OR
+    padding-top: 20px                  /*add 20px paddling to the top*/
+    padding-right: 10px                /*add 10px paddling to the right*/
+    padding-bottom: 20px               /*add 20px paddling to the bottom*/
+    padding-left: 10px                 /*add 10px paddling to the left*/
+        OR
+    padding: 20px 10px 20px 10px       /*top right bottom left*/
+        OR
+    padding: 20px 10px                 /*top+bottom right+left*/
+}
+
+/*
+The Footer
+    Next, we're going to work on the layout of the footer.
+    As with the header, let's check out the design and the structure.
+    On the left side of the footer is the logo, and on the right is the list.
+
+The Structure of the Footer
+    When we created the header, we applied float and padding to every <li> element. Because of that, the CSS properties are also applied to the <li> elements in the footer.
+    How do you think we can apply these CSS properties only to the <li> tags in the header?
+
+Nested Selectors
+    By adding li after header-list with a space in between, you can apply CSS to only the <li> elements in the header-list.
+    This allows you to apply different CSS to the <li> elements in the header from those in the footer.
+*/
+.header-list li{
+    float: left;
+    padding: 33px 20px;
+}
+
+/*
+Rearranging the Logoand the List
+    Let's look at the images below.
+    The footer logo and list are respectively located at the far left and right.
+    We learned how to align elements from the left using float: left, but how do we place them on the right edge?
+
+float: right
+    With float: right, you can horizontally align the targeted elements from right to left.
+
+Positioning Elements Left and Right
+    By combining float: left; and float: right;, you can place the logo and the list in a row from left to right.
+    Let's apply float: left; to the footer-logo selector so that it is placed on the left edge. Also apply float: right; to the footer-list selector to move it to the right edge.
+*/
+.footer {
+    background-color: #2f5167;
+    color:#fff;
+    height: 120px;
+    padding: 40px; 
+}
+
+.footer-logo {
+    font-size: 32px;
+    float: left;
+}
+  
+.footer-list {
+    float: right;
+}
+  
+.footer-list li{
+    padding-bottom: 20px;
+}
+
+/*
+The Main Layout
+    Let's move on to the main layout!
+    As shown below, it consists of three elements, copy-container, contents, and contact-form.
+    It may look a bit more complicated than other layouts we've created. But don't worry! We'll explain each step for you to follow along.
+
+Applying CSS to a Part of Text
+    In the image below, notice that the period (.) in the <h1> element "HELLO WORLD." is colored red. We'll show you how to apply CSS to only a part of a text.
+
+<span> Tag
+    You can apply CSS to a part of a text by putting it in a <span> tag. The images below illustrate this by applying color: red; to a span selector. 
+    There is no new line inserted before or after a <span> element.
+
+Block-Level and Inline Elements
+    In HTML, some elements start on a new line while others don't.
+    Block-level elements like divs contain a new line before and after the element, and extend to the full width of their parent element.
+    Inline elements like spans only take up as much width as necessary.
+*/
+## SEE EXAMPLE HTML ON HTML & CSS I.html ##
+.copy-container h1 {
+    font-size: 140px;
+  }
+  
+  /* Change the font-size of <h2> tags within copy-container */
+  .copy-container h2 {
+    font-size: 60px;
+  }
+  
+  /* Change the color of <span> tags within copy-container */
+  .copy-container span {
+    color: #ff4a4a;
+  }
+/*
+Borders
+  In the image below, the <h3> element has a border under it.
+  Let's learn how to add a border to an element on the next slide.
+
+Syntax for Borders
+  You can add a border with the border property.
+  As shown in the images, you can specify the thickness, style, and color.
+  Using the border property will apply a border to all sides. 
+  If you want to add it only to a specific side, use one of the following properties: border-bottom, border-top, border-left, or border-right.
+*/
+.logo1 {
+    border: 5px solid red           /*width style color*/ /*adds a border around the logo1*/
+}
+
+.logo2 {
+    border-bottom: 1px solid #333   /*width style color*/ /*adds a border at the bottom of logo2*/
+}
+
+/*
+Space Inside andOutside of Borders
+  As shown below, there are spaces added above and below the border.
+  On the next slide, we're going to learn how to add space inside and outside of a border.
+
+Padding and Margin
+  Earlier, we used the padding property to create space around an element. However, the padding adds space inside its border.
+  The margin property, though, adds space outside the border.
+  You can specify the values just like you did for the padding.
+
+The Box Model
+  The border, padding, and margin properties we've covered so far are based on the concept of the box model.
+  Every HTML element has a border (most are not visible by default).
+  The space outside the border is margin, and the inside is padding.
+
+Margin Shorthand
+  Just like the padding property, you can specify multiple margins in each direction individually, or all at once using only one property.
+*/
+logo1 {
+    margin: 20px                      /*add 20px margin to all sides*/
+        OR
+    margin-top: 20px                  /*add 20px margin to the top*/
+    margin-right: 10px                /*add 10px margin to the right*/
+    margin-bottom: 20px               /*add 20px margin to the bottom*/
+    margin-left: 10px                 /*add 10px margin to the left*/
+        OR
+    margin: 20px 10px 20px 10px       /*top right bottom left*/
+        OR
+    margin: 20px 10px                 /*top+bottom right+left*/
+}
+
+/*
+Applying CSS to Multiple Selectors
+    You can group the same CSS by separating multiple selectors with a comma , as shown in the center image. By doing so, you can apply the same CSS to different selectors.
+    For our website, let's apply the same CSS to <input> and <textarea> elements using this method.
+*/
+## SEE EXAMPLE HTML ON HTML & CSS I.html ##
+
+h1, o {
+    color: #ff0000;
+}
+
+/* HTML & CSS I END CODE */
+
+body {
+    font-family: "Avenir Next";
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  .header {
+    background-color: #26d0c9;
+    color: #fff;
+    height: 90px;
+  }
+  
+  .header-logo {
+    float: left;
+    font-size: 36px;
+    padding: 20px 40px;
+  }
+  
+  .header-list li {
+    float: left;
+    padding: 33px 20px;
+  }
+  
+  .main {
+    padding: 100px 80px;
+  }
+  
+  .copy-container h1 {
+    font-size: 140px;
+  }
+  
+  .copy-container h2 {
+    font-size: 60px;
+  }
+  
+  .copy-container span {
+    color: #ff4a4a;
+  }
+  
+  .contents {
+    height: 500px;
+    margin-top: 100px;
+  }
+  
+  .section-title {
+    border-bottom: 2px solid #dee7ec;
+    font-size: 28px;
+    padding-bottom: 15px;
+    margin-bottom: 50px;
+  }
+  
+  .contents-item {
+    float: left;
+    margin-right: 40px;
+  }
+  
+  .contents-item p {
+    font-size: 24px;
+    margin-top: 30px;
+  }
+  
+  .contact-form {
+    padding-top: 100px;
+  }
+  
+  /* Add CSS for <input> and <textarea> tags */
+  input, textarea {
+    width: 400px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    padding: 20px;
+    font-size:18px;
+    border: 1px solid #dee7ec;
+  }
+  
+  /* Add CSS for contact-submit */
+  .contact-submit {
+    background-color: #dee7ec;
+    color: #889eab;
+  }
+  
+  .footer {
+    background-color: #2f5167;
+    color: #fff;
+    height: 120px;
+    padding: 40px;
+  }
+  
+  .footer-logo {
+    float: left;
+    font-size: 32px;
+  }
+  
+  .footer-list {
+    float: right;
+  }
+  
+  .footer-list li {
+    padding-bottom: 20px;
+  }
+

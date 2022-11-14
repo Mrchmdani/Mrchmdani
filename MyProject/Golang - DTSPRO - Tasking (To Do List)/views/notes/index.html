@@ -1,0 +1,71 @@
+{{ define "notes/index" }}
+{{ template "globals/header" .}}
+
+<!-- CREATE NEW NOTE -->
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Create New Note
+        </div>
+
+
+            <!-- FORM -->
+
+            <form class="col" method="post">
+                <div class="card-body">
+                    <h5>User</h5>
+                    <label for="User" class="visually-hidden">User</label>
+                    <input type="text" class="form-control" id="user" name="user" placeholder="User">
+                </div>
+                <div class="card-body">
+                    <h5>Description</h5>
+                    <label for="content" class="visually-hidden">Content</label>
+                    <input type="text" class="form-control" id="content" name="content" placeholder="Description">
+                </div>
+                <div class="card-body">
+                    <h5>Date</h5>
+                    <label for="DueDate" class="visually-hidden">Date</label>
+                    <input type="text" class="form-control" id="duedate" name="duedate" placeholder="DueDate">
+                </div>
+
+                <!-- SUBMIT BUTTON -->
+
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary float-end mx-auto">Submit</button>
+                </div>
+            </form>
+
+    </div>
+
+    <!-- NOTE LISTS-->
+
+    <div class="card mt-4">
+        <div class="card-header">
+            Note Lists
+        </div>
+        <ul class="list-group list-group-flush">
+            {{range $index, $note := .notes}}
+
+                <!-- BUTTON DONE EDIT DELETE-->
+
+            <li class="list-group-item">
+                {{if $note.IsDone}}
+                {{ add $index 1 }} - <del>{{ $note.Content }}</del>
+                {{ else }}
+                {{ add $index 1 }} - {{ $note.Content }}
+                {{ end }}
+                <a href="/notes/{{ $note.ID }}/delete" class="btn btn-danger float-end">Delete</a>
+                <a href="/notes/{{ $note.ID }}/edit" class="btn btn-warning float-end">EDIT</a>
+                {{if $note.IsDone}}
+                <a href="/notes/{{ $note.ID }}/done" class="btn btn-secondary float-end">UnDone</a>
+                {{ else }}
+                <a href="/notes/{{ $note.ID }}/done" class="btn btn-success float-end">Done</a>
+                {{ end }}
+
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+</div>
+{{ template "globals/footer" .}}
+{{ end }}

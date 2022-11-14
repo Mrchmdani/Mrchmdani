@@ -1,0 +1,216 @@
+/* HTML & CSS III */
+
+/*
+Loading responsive.css
+    We could write our media queries in stylesheet.css, but we'll put them in a different file, responsive.css, to keep our CSS organized.
+    Make sure that you load responsive.css below the viewport.
+
+The Width of lesson
+    Let's start with the layout for tablets.
+    With tablets, there isn't enough width to fit four lessons in one row.
+    Let's fix this by placing only two lessons in one row.
+    We can do this by changing the width of lesson to 50%.
+*/
+
+/* Add a breakpoint at max-width: 1000px */
+@media (max-width: 1000px) {
+    /* Add CSS for lesson */
+    .lesson {
+      width: 50%;                                   /* set the width to 50% to make a 2-column layout */
+      margin-bottom: 50px;
+    }
+  }
+
+## CHECK HTML code ON HTML & CSS III - index.html ##
+
+/*
+Fixing the Background
+    Since we've changed the lessons to be shown in two rows, they no longer fit inside the section with the background color.
+    This is because the height of lesson-wrapper is fixed to 580px.
+    Let's remove this so that the height of lesson-wrapper will be determined by its children.
+
+float and the Parent Element
+    By default, an element's height is determined by that of its children.
+    But this is not the case when all the child elements have float applied, in which case the height of the parent will be 0.
+    This is because the floating elements will not affect the parent.
+
+Clearing the float
+    Let's learn how to add height to an element with floating children.
+    We can do this by adding an empty <div> tag with clear: left; applied.
+    clear: left; cancels the children's float state, so their height will affect the parent element's height.
+*/
+
+## CHECK code ON HTML & CSS III - index.html & stylesheet.css ##
+
+/*
+The Smartphone Layout
+    Now let's work on the layout for smartphones.
+    We'll set the breakpoint to 670px.
+    Let's first change the width of lesson to 100% to make a single column layout.
+
+Aligning the footer
+    Also, let's set the footer to align in the center when viewed from smartphone devices.
+*/
+
+/* Add a breakpoint at max-width: 670px */
+@media (max-width: 670px) {
+    /* Change lesson's width to 100% */
+    .lesson {
+      width:100%;
+    }
+    
+    /* Change <footer>'s text-align property */
+    footer {
+      text-align: center;
+    }
+    
+}
+
+/*
+Adjusting the Buttons
+    Next, let's make the buttons spread to the full-width so that they are easier to tap.
+    We'll also adjust the margin between the buttons.
+*/
+
+/* Change btn's width to 100% */
+.btn {
+    width:100%;
+  }
+  
+  /* Change facebook's margin-bottom to 10px */
+  .facebook {
+    margin-bottom: 10px;
+}
+  
+  /* Add CSS for top-wrapper */
+  .top-wrapper {
+    text-align: left;
+    padding-top: 130px;
+}
+
+/*
+Making the font-size Responsive
+    Smaller fonts will fit better in a smaller screen.
+    So, let's adjust the font for each device.
+*/
+
+/* Add CSS for <h1> tags inside top-wrapper */
+.top-wrapper h1 {
+    font-size: 32px;
+}
+  
+  /* Add CSS for <h2> tags inside heading */
+  .heading h2 {
+    font-size: 20px;
+}
+
+/*
+Handling Large Screens
+    We've learned how to adjust the layout for smaller devices.
+    What about devices with larger screens?
+    For example, if we viewed our web page on a 2000px screen, the lessons will be too far apart from each other.
+
+max-width
+    Since we've set the width of container to 100%, it will become too
+    big on a larger screen. We can fix this by setting the max-width.
+    In the example, we've set the max-width to 1170px, so the content inside will always be contained within this limit.
+*/
+
+## CHECK code ON HTML & CSS III - stylesheet.css ##
+
+/*
+Making the Header Responsive
+    To finish off, let's apply a different header for smartphones.
+    Since the whole menu won't fit, we'll display a menu icon instead.
+    (This way, you can display the menu when the icon is tapped.)
+
+Hiding and Showing Elements
+    We'll hide the menu icon by default and only display it when the device width is 670px or less.
+    To hide an element, we can use display: none;.
+    To display a hidden element, we can use display: block;.
+*/
+
+@media (max-width: 670px) {
+    .header-right { 
+        display: none;              /* hide the default menu on smartphones */
+    }
+    .menu-icon {
+        display: block;             /* display the menu icon instead */
+    }
+}
+
+/* EXAMPLE */
+
+  /* Add CSS for header-right */
+  .header-right {
+    display: none;
+  }
+  
+  /* Add CSS for menu-icon */
+  .menu-icon {
+    display: block;
+}
+
+## CHECK code ON HTML & CSS III - index.html & stylesheet.css ##
+
+
+
+/* For Tablets */
+@media all and (max-width: 1000px) {
+    .lesson {
+      width: 50%;
+      margin-bottom: 50px;
+    }
+    
+    .top-wrapper h1 {
+      font-size: 32px;
+    }
+    
+    .heading h2 {
+      font-size: 20px;
+    }
+  }
+  
+  /* For Smartphones */
+  @media all and (max-width: 670px) {
+    .lesson {
+      width: 100%;
+    }
+    
+    footer {
+      text-align: center;
+    }
+    
+    .btn {
+      width: 100%;
+    }
+    
+    .facebook {
+      margin-bottom: 10px;
+    }
+    
+    .top-wrapper {
+      text-align: left;
+    }
+    
+    /* Add CSS for header-right */
+    .header-right {
+      display: none;
+    }
+    
+    /* Add CSS for menu-icon */
+    .menu-icon {
+      display: block;
+    }
+    
+    
+    .top-wrapper h1 {
+      font-size: 24px;
+      line-height: 36px;
+    }
+    
+    .top-wrapper p {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }

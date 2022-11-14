@@ -1,0 +1,477 @@
+/* HTML & CSS III */
+
+/*
+Responsive Web Design
+    In this lesson, we'll be applying Responsive Web Designto the web page we developed in the previous lesson.
+    Responsive Web Design adapts to all types of screen sizes and devices to display the contents of the website.
+    It’s especially important for website creation considering the necessity to display on smartphones.
+*/
+
+/*
+Applying Responsive Web Design
+    By applying responsive web design to the website created during the previous lesson, you can change the layout display to fit screen size, as seen in the image below.
+*/
+
+/*
+Media Queries
+    From here on, we'll be learning about media queries.
+    They allow you to specify different CSS depending on the size of the device.
+
+Using Media Queries
+    Let's learn how to write media queries.
+    The syntax is as follows: @media (condition) { .... }.
+    The CSS inside { } will be applied only when the condition is met.3
+
+max-width and min-width
+    We can specify the max-width or the min-width as a condition.
+    When max-width: 1000px is specified, the CSS will be applied only when the width of the screen is 1000px or less.
+    On the other hand, with min-width the CSS will be applied when the width of the screen is the specified size or more.
+
+Breakpoints
+    The value you specify for the max-width or the min-width is called a breakpoint.
+    We'll be using 670px as the breakpoint for smartphones, and 1000px for tablets.
+*/
+
+h1 {
+    color: red;
+  }
+  
+  /* Add a breakpoint at max-width: 1000px */
+  @media (max-width: 1000px) {
+    /* Change <h1>'s color property to blue */
+    h1 {
+      color: blue;
+    }
+    
+  }
+  
+  /* Add a breakpoint at max-width: 670px */
+  @media (max-width: 670px) {
+    /* Change <h1>'s color property to green */
+    h1 {
+      color: green;
+    }
+    
+}
+
+/*Now the text should be:
+・Red on Desktops (1200px)
+・Blue on Tablets (680px)
+・Green on Smartphones (350px)*/
+
+/*
+Layout with Media Queries
+    In the previous lesson, we learned how to change the color of the text based on the width of the device.
+    Now let's learn how to change the layout.
+
+Changing the Width Using Media Queries
+    When you have several items in a row, they will look too small when displayed on smaller devices.
+    Let's fix this by changing the width of each item for smaller devices.
+*/
+
+/* For Tablets */
+/* Add a breakpoint at max-width: 1000px */
+
+.item {
+    width: 25%;
+    float: left;
+}
+
+@media (max-width: 1000px) {
+    .item {
+      width: 50%;
+    }
+}
+  
+  
+  /* For Smartphones */
+  /* Add a breakpoint at max-width: 670px */
+  @media (max-width: 670px) {
+    .item {
+      width: 100%;
+    }
+}
+
+/*
+box-sizing
+    The image on the left shows what would happen if we added padding to the items in the previous exercise. 
+    Having four items with 25% width along with the padding will cause the width to be greater than 100%, and so the last item will not fit.
+    We can fix this using box-sizing: border-box;.
+
+How box-sizing Works
+    By setting the box-sizing property to border-box, an element's width will include the padding and the border.
+    Therefore, the layout will not break when you add padding or border (this is not the case with margin).
+
+Applying CSS to All Elements
+    You can use the * selector when you want to apply CSS to all the elements, like in the image below.
+    It's a good practice to apply box-sizing: border-box; to all the elements because it will make it easier to adjust the layout of the web page.
+*/
+
+/* Apply box-sizing: border-box; to all the elements */
+* {
+    box-sizing: border-box;
+}
+
+.item {
+    width: 25%;
+    float: left;
+    /* Change the left & right padding to 15px*/
+    padding: 0px 15px;
+}
+
+/*
+Making Your Page Responsive
+We've learned the basics of Responsive Web Design. Let's put it into practice by applying it to the web page that we made in the previous lesson. 
+To begin, we have a few things that we need to prepare.
+
+viewport
+In preparation for applying Responsive Web Design to the page, let's set the viewport inside the <head> tag. 
+Without the viewport, the media queries won't function properly on tablets and smartphones. You don't have to memorize the content of the viewport.
+
+width: 100%
+In the previous lesson, we had the width fixed to 1170px, so it won't fit into devices with smaller screens. 
+Let's change the width to 100% so that it fills whatever the width for any device.
+*/
+
+.container {
+    /* Change the width to 100% */
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+
+## CHECK HTML code ON HTML & CSS III - index.html ##
+
+/*
+Loading responsive.css
+    We could write our media queries in stylesheet.css, but we'll put them in a different file, responsive.css, to keep our CSS organized.
+    Make sure that you load responsive.css below the viewport.
+
+The Width of lesson
+    Let's start with the layout for tablets.
+    With tablets, there isn't enough width to fit four lessons in one row.
+    Let's fix this by placing only two lessons in one row.
+    We can do this by changing the width of lesson to 50%.
+*/
+
+## CHECK HTML code ON HTML & CSS III - index.html & responsive.css ##
+
+/*
+Fixing the Background
+    Since we've changed the lessons to be shown in two rows, they no longer fit inside the section with the background color.
+    This is because the height of lesson-wrapper is fixed to 580px.
+    Let's remove this so that the height of lesson-wrapper will be determined by its children.
+
+float and the Parent Element
+    By default, an element's height is determined by that of its children.
+    But this is not the case when all the child elements have float applied, in which case the height of the parent will be 0.
+    This is because the floating elements will not affect the parent.
+
+Clearing the float
+    Let's learn how to add height to an element with floating children.
+    We can do this by adding an empty <div> tag with clear: left; applied.
+    clear: left; cancels the children's float state, so their height will affect the parent element's height.
+*/
+
+/* Add CSS for clear */
+.clear {
+    clear:left;
+}
+
+.lesson-wrapper {
+    /* Remove the CSS for height */
+    padding-bottom: 80px;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: #f7f7f7;
+    text-align: center;
+}
+
+/*
+The Smartphone Layout
+    Now let's work on the layout for smartphones.
+    We'll set the breakpoint to 670px.
+    Let's first change the width of lesson to 100% to make a single column layout.
+
+Aligning the footer
+    Also, let's set the footer to align in the center when viewed from smartphone devices.
+*/
+
+## CHECK code ON HTML & CSS III - responsive.css ##
+
+/*
+Adjusting the Buttons
+    Next, let's make the buttons spread to the full-width so that they are easier to tap.
+    We'll also adjust the margin between the buttons.
+*/
+
+## CHECK code ON HTML & CSS III - responsive.css ##
+
+/*
+Making the font-size Responsive
+    Smaller fonts will fit better in a smaller screen.
+    So, let's adjust the font for each device.
+*/
+
+## CHECK code ON HTML & CSS III - responsive.css ##
+
+/*
+Handling Large Screens
+    We've learned how to adjust the layout for smaller devices.
+    What about devices with larger screens?
+    For example, if we viewed our web page on a 2000px screen, the lessons will be too far apart from each other.
+
+max-width
+    Since we've set the width of container to 100%, it will become too
+    big on a larger screen. We can fix this by setting the max-width.
+    In the example, we've set the max-width to 1170px, so the content inside will always be contained within this limit.
+*/
+
+.container {
+    /* Change the max-width to 1170px */
+    max-width:1170px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+/*
+Making the Header Responsive
+    To finish off, let's apply a different header for smartphones.
+    Since the whole menu won't fit, we'll display a menu icon instead.
+    (This way, you can display the menu when the icon is tapped.)
+
+Hiding and Showing Elements
+    We'll hide the menu icon by default and only display it when the device width is 670px or less.
+    To hide an element, we can use display: none;.
+    To display a hidden element, we can use display: block;.
+*/
+
+.menu-icon {
+    display: none;                          /* by default, hide the menu icon */
+}
+
+/* EXAMPLE */
+
+/* Add CSS for menu-icon */
+.menu-icon {
+    color: white;
+    float: right;
+    font-size: 25px;
+    padding: 21px 0;
+    /* Change the display property to none */
+    display: none;
+}
+
+## CHECK code ON HTML & CSS III - index.html & responsive.css ##
+
+
+
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: "Lucida Grande";
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  .clear {
+    clear: left;
+  }
+  
+  .container {
+    max-width: 1170px;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+  
+  .top-wrapper {
+    padding: 180px 0 100px 0;
+    background-image: url(https://prog-8.com/images/html/advanced/top_en.png);
+    background-size: cover;
+    color: white;
+    text-align: center;
+  }
+  
+  .top-wrapper h1 {
+    opacity: 0.7;
+    font-size: 45px;
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .top-wrapper p {
+    opacity: 0.7;
+    margin-bottom: 3px;
+  }
+  
+  .btn-wrapper {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  .btn-wrapper p {
+    margin: 10px 0;
+  }
+  
+  .signup {
+    background-color: #239b76;
+  }
+  
+  .facebook {
+    background-color: #3b5998;
+    margin-right: 10px;
+  }
+  
+  .twitter {
+    background-color: #55acee;
+  }
+  
+  .btn {
+    padding: 12px 24px;
+    color: white;
+    display: inline-block;
+    opacity: 0.8;
+    border-radius: 4px;
+    text-align: center;
+  }
+  
+  .btn:hover {
+    opacity: 1;
+  }
+  
+  .fa {
+    margin-right: 5px;
+  }
+  
+  header {
+    height: 65px;
+    width: 100%;
+    background-color: rgba(34, 49, 52, 0.9);
+    position :fixed;
+    top: 0;
+    z-index: 10;
+  }
+  
+  .logo {
+    width: 124px;
+    margin-top: 20px;
+  }
+  
+  .header-left {
+    float: left;
+  }
+  
+  .header-right {
+    float: right;
+    margin-right: -25px;
+  }
+  
+  .header-right a {
+    line-height: 65px;
+    padding: 0 25px;
+    color: white;
+    display: block;
+    float: left;
+    transition: all 0.5s;
+  }
+  
+  .header-right a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  
+  /* Add CSS for menu-icon */
+  .menu-icon {
+    color: white;
+    float: right;
+    font-size: 25px;
+    padding: 21px 0;
+    /* Change the display property to none */
+    display: none;
+  }
+  
+  
+  .lesson-wrapper {
+    padding-bottom: 80px;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: #f7f7f7;
+    text-align: center;
+  }
+  
+  .heading {
+    padding-top: 80px;
+    padding-bottom: 50px;
+    color: #5f5d60;
+  }
+  
+  .heading h2 {
+    font-weight: normal;
+  }
+  
+  .lesson {
+    float: left;
+    width: 25%;
+  }
+  
+  .lesson-icon {
+    position: relative;
+  }
+  
+  .lesson-icon p {
+    position: absolute;
+    top: 44%;
+    width: 100%;
+    color: white;
+  }
+  
+  .text-contents {
+    width: 80%;
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 15px;
+    color: #b3aeb5;
+  }
+  
+  .heading h3 {
+    font-weight: normal;
+  }
+  
+  .message-wrapper {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 80px;
+    text-align: center;
+  }
+  
+  .message {
+    padding: 15px 40px;
+    background-color: #5dca88;
+    cursor: pointer;
+    box-shadow: 0 7px #1a7940;
+  }
+  
+  .message:active {
+    position: relative;
+    top: 7px;
+    box-shadow: none;
+  }
+  
+  footer img {
+    width: 125px;
+  }
+  
+  footer p {
+    color: #b3aeb5;
+    font-size: 12px;
+  }
+  
+  footer {
+    padding-top: 30px;
+    padding-bottom: 20px;
+  }

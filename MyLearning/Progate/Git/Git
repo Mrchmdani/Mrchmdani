@@ -1,0 +1,112 @@
+Let's Learn Git
+    When making a website, you may have to collaborate with others.
+    Git is a tool that'll help you to do team development smoothly.
+    Let's learn Git with Ken the Ninja and Master Wooly!
+    (It's recommended to complete Command Line Study Course I before this lesson.)
+
+Team Development with Git
+Ken the Ninja and Master Wooly are going to make a website together.
+While Ken is trying team development for the first time, Master Wooly is already an expert. Let's learn Git as we follow along with their team development experience.
+
+Git Setup
+Git is operated from the terminal.
+First, to get started, you need to run the command git init.
+You do not need to type $ that appears in the terminal.
+-> $ git init
+
+The Role of Git
+These are the 3 steps to team development.
+1) make changes to a File
+2) Prepate to share the changes
+3) Share the changes
+Look at steps 2 & 3. You need to share the code you write with others to do team development. That is where Git comes in.
+
+Selecting Files to Share
+First you need to select the files you want to share.
+To select a file, use the command git add file_name.
+-> $ git add index.html
+
+Recording Selected Files
+git commit
+To record a selected file, run the command git commit -m "message"
+-> $ git commit -m "Create index.html"
+
+Team Development Workflow
+With git add and git commit, the 2 commands we've already learned, you are ready to share files.
+
+The Sharing Process
+Git uses something called a remote (or remote repository) to store shared files.
+Developers share files by uploading to and downloading from remotes. 
+
+Setting up a Remote
+Adding a Remote
+You need the remote's URL in order to upload. Here's the URL of the remote I prepared this time https://prog-8.com/mysite.git
+When you add a remote, a name is required. Usually, developers use the name origin.
+More specifically, to register a remote, type git remote add remote_name URL, as shown on the right. 
+-> $ git remote add origin https://https://prog-8.com/mysite.git
+
+Uploading Files to a Remote
+Now let's try uploading a file to the remote! We can upload to the remote we made earlier by running:
+Uploading like this with Git is called a push.
+-> $ git push origin master
+
+Downloading Files from a Remote
+Downloading a file like this is called a pull. You should remember that.
+-> $ git pull origin master
+
+Practicing the Team Development Workflow
+1) git add
+2) commit
+3) push
+4) pull
+
+Mastering Git
+Important Points About Git
+In team development, it is important to clearly recognize the changes you have made and select which changes should be shared with your partners. 
+how to recognize and select the code we share. 
+
+Recognizing Modified Files
+First, it is important to recognize the changes you have made. Using git status, you can display a list of modified files.
+-> $ git status         /* modified status appear on RED */
+
+Recognizing Content Changes
+Modified code will be displayed, as shown on the right, with the code after in green and the code before in red.
+You can confirm the changes and execute git add with confidence.
+Here is a command to see the content changes
+-> $ git diff
+-> $ git commit
+
+Checking Added Files
+Use git status to check which file has been added.
+Select stylesheet.css as the file to share using git add.
+When you run git status, added files will appear green and files that have not yet been added will be red. 
+-> $ git status
+    modified: index.html        *GREEN*
+    modified: stylesheet.css    *RED*
+-> $ git add stylesheet.css
+    modified: index.html        *GREEN*
+    modified: stylesheet.css    *GREEN*
+
+Writing Good Commit Messages
+You should write good commit messages so that when someone sees them they can understand easily what kind of changes were made.
+example: I changed the subtitle color.
+-> $ git commit -m "Change subtitle color"
+
+git log
+Using the command git log, you or anyone else can view the commits.
+-> $ git log
+To see the changes, you can use git log -p.
+-> $ git log -p
+With the up and down arrow keys, you can scroll through the changes. And to quit just press the Q key.
+
+
+
+
+
+
+-> $ git branch dev/map                 buat branch map
+
+-> git checkout dev/map                 pindah ke branch map
+-> notepad .\index,js
+-> git status
+-> git add .

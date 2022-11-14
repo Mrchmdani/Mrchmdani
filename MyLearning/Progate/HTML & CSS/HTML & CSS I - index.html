@@ -1,0 +1,575 @@
+<!-- 
+HTML & CSS I
+
+Getting Started with HTML & CSS
+    Welcome to the exciting world of HTML & CSS!
+    In this lesson, we're going to create the website displayed in the image below.
+    It may look difficult, but don't worry! We'll guide you every step of the way.
+-->
+
+<!--
+What are HTML & CSS?
+    Most websites are created with languages called HTML and CSS.
+    By learning these two powerful languages, you will be able to build websites like the ones below.
+
+How HTML Works
+    Let's get started with HTML!
+    The first rule of writing HTML code is to surround text with tags.
+    Tags give a meaning, such as a heading or a link, to text.
+
+Opening and Closing Tags
+    Most HTML elements require a pair of tags, an opening tag and a closing tag, with text inserted in between.
+    When using closing tags, make sure to put "/".
+
+Heading Tags
+
+    Heading tags are used to format heading elements.
+    These tags range from <h1> to <h6>, <h1> being the largest and <h6> being the smallest (※ h stands for heading).
+-->
+<h1>Hello World</h1>
+<h6>Hello World</h6>
+
+<!--
+Paragraph Tag
+    The <p> tag defines a paragraph (※ p stands for paragraph). The text enclosed by tags such as <h2> and <p> begin on a new line. 
+
+Using Headings and Paragraphs
+    The <h1>...<h6> tags are used according to the size and importance of headings as shown below.
+    For text that is not a heading, let's use the <p> tag.
+-->
+<h1>Hello World</h1>
+<h2>Let's learn to code</h2>
+<h3>Lesson</h3>
+<p>HTML & CSS</p>
+<p>PHP</p>
+<p>Ruby</p>
+<p>Swift</p>
+
+<!--
+Comments
+    This is comment code.
+    Comments are not displayed in the browser, so they are useful for explaining your code.
+-->
+<!-- Comment -->
+
+<!--
+Link Tag (1)
+    You can easily create a link with the <a> tag (※ a stands for anchor).
+    The text in <a> tags is displayed in the browser as a link text.
+
+Link Tag (2)
+    Every link has a destination.
+    So, in order to make any link work, you'll need to specify a destination URL in the <a> element by adding the href attribute.
+    As shown in the image on the left, the destination URL goes in the url part of <a href="url">.
+
+HTML Attributes
+    In HTML, you can specify an attribute like href in the opening tag (※ see the image on the left).
+    Always put attribute values in double quotes ".
+-->
+<a>Progate</a>
+<a href="https://progate.com">Progate</a>
+<a href="https://google.com">To Google</a>
+
+<!--
+Image Tag
+    The <img> tag is used to display an image.
+    We can set the image by specifying the url in the src attribute as follows: <img src="url">.
+    Note that <img> tags don't require closing tags as they don't enclose any text.
+-->
+<img src="https://progate.com/images/html/beginner/wanko.jpg">
+<img src="https://progate.com/images/html/beginner/school.jpg">
+
+<!--
+Lists
+    You can create a list item by enclosing the text with <li> tags.
+    We'll cover the <ul> tag on the next slide.
+
+Lists (2)
+    The type of list items changes depending on the tag you use.
+    With the <ul> tag, you can create bulleted lists.
+    When elements are "nested" like this, the enclosing element becomes the parent and the enclosed elements become its children.
+
+Indentation
+    For nested elements, it's a good practice to align code with indentation.
+    Although not required, indentation makes it easier to see the parent-child relationship especially when your code becomes complicated
+    (※ to indent, press the "tab" key at the beginning of a line).
+-->
+<ul>
+    <li>HTML</li>
+    <li>PHP</li>
+    <li>Ruby</li>
+</ul>
+
+<!--
+What is CSS?
+    CSS is used to design a website. With CSS, you can change things like the color, size, and spacing of HTML elements.
+    The page on the left is comprised of only HTML.
+    By applying CSS, you can style it like the layout shown on the right.
+
+How CSS Works
+    CSS is written in a separate file from HTML.
+    You can apply CSS to HTML elements by specifying "where," "what," and "how" you want to change it.
+    In the example below, CSS is applied to an <h1> element (the "where") and its color (the "what") is changed to red (the "how").
+    The target HTML element is called the selector.
+
+Colors
+    Let's learn about the color property!
+    In CSS, colors are specified by hexadecimal values like color: #ff0000;.
+    You don't need to remember the values, but you can search online for other colors if you're interested.
+
+CSS Syntax
+    There are a few things to keep in mind when writing CSS.
+    Just like HTML, you should always indent CSS code as shown below.
+    Also, note that it is necessary to add a colon : at the end of a CSS property and a semicolon ; at the end of the line.
+
+CSS Comments
+    Just as you did in HTML, you can write comments in a CSS file.
+    In CSS, however, a comment should be surrounded by /* */.
+-->
+## SEE EXAMPLE ON HTML & CSS I.css ##
+
+<!--
+Font Size
+    The size of a font can be set with the font-size property.
+    A common unit for setting the font-size is px (pixel).
+
+Font Family
+    With the font-family property, you can specify the type of font.
+    You can do this by setting font-family: font name;.
+    If the font name contains a space, you need to surround it with double quotes.
+
+    Variety of Fonts
+    When setting the font-family property, you can specify various font types such as "serif" and "sans-serif".
+    You don't have to memorize the name of the fonts.
+-->
+## SEE EXAMPLE ON HTML & CSS I.css ##
+
+<!--
+Background Colors
+    The background-color property allows you to change the background color. You can set the background color just like the color property.
+    In addition, if the same letter continues like #dddddd, it can be shortened to #ddd.
+
+Width and Height
+    To change the width and height of an element, use the width property and height property, respectively. 
+    Both of these can be specified with px. As with the font-size, don't forget to put the px!
+-->
+## SEE EXAMPLE ON HTML & CSS I.css ##
+
+<!--
+Applying CSS to a certain element
+    When there are multiple <li> elements in your code, applying CSS like the image below would turn all the <li> elements red.
+    So, how do we change only one of the <li> elements to red?
+
+Labeling Tags
+    You can achieve this by labeling elements using the class attribute.
+    By adding a class to an HTML tag, you can differentiate each element and apply different CSS.
+    When applying CSS to a class selector, note that a period . is required in front of the class name.
+
+Applying CSS to Multiple Tags
+    If you assign the same class name to multiple HTML elements, the same CSS applies to all of them.
+
+Syntax for Classes
+    As noted before, class selector names always start with a period.
+    If you forget the period, the CSS will not be applied.
+    Note that CSS class selectors start with a period, but tags do not.
+-->
+<ul>
+    <li class="selected">HTML</li>
+    <li>PHP</li>
+    <li>Ruby</li>
+</ul>
+
+<!--
+Your First Website
+    Now it's time to create your first website!
+    Check out the image below to get an idea of what you'll create.
+
+The Structure of HTML
+    In an actual HTML document, there are some rules you need to follow.
+    For example, the <head> and the <body> elements are required in the <html> element (※ See the image on the left).
+    The <head> element contains information of the document while the <body> element contains the contents that are visible in the browser.
+
+Specifying the HTML Version
+    In every HTML document, you need to start with the DOCTYPE declaration, which indicates the specific HTML version for your website.
+    We'll be using <!DOCTYPE html>, which is for HTML, the latest version of HTML. 
+    Don't worry too much about the specific type, just remember that it's something you always have to specify.
+
+<head> Tag
+    The <head> element contains the settings of the HTML document that are not visible in the browser.
+    There are three elements you need to put in the <head> element.
+    We will take a look at each one of them in the next lesson.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <h1>Progate</h1>
+    <p>Learn to Code</p>
+</head>
+<body>
+    
+</body>
+</html>
+
+<!--
+Contents within the <head> Tag
+    Within the <head> element, we will specify 1) the character encoding, 2) the title of the website, and 3) the link to a CSS file.
+    You don't have to know them by heart, but let's see what these elements mean.
+
+Character Encoding
+    By specifying the character encoding in the charset attribute as <meta charset="utf-8">, you can prevent the website from garbling.
+    UTF-8 is the recommended character encoding for HTML.
+
+Title for Your Website
+    The <title> element specifies the title of the document.
+    As shown in the image on the right, the title specified in the <title> element appears on the browser tab.
+
+Linking a CSS file
+    In our exercises, the CSS code you write in stylesheet.css is immediately reflected in the preview window. However, this is normally not the case. 
+    You need to create a link between an HTML and CSS file by defining <link rel="stylesheet"> in the HTML.
+    You can specify the name of the CSS file using the href attribute.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">                          <!--1) specify the character encoding -->
+    <title>Document</title>                         <!--2) specify the title -->
+    <link rel="stylesheet" href="stylesheet.css">   <!--3) specify which css file to load -->
+</head>
+<body>
+    
+</body>
+</html>
+
+<!--
+The Layout
+    Layout is one of the most important parts of building a website.
+    The layout of the website we're going to build is made up of mainly three parts as shown in the image below.
+    Let's get started!
+
+<div> Tag
+    We're going to create the layout with <div> elements (※ "div" stands for "division").
+    The <div> tag is used to group elements.
+    In the example below, the layout is divided by three <div> elements with class names header, main, and footer.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Progate</title>
+    <link rel="stylesheet" href="stylesheet.css">
+  </head>
+  <body>
+    <!-- Add a <div> tag with the "header" class -->
+    <div class="header">Header</div>
+    
+    <!-- Add a <div> tag with the "main" class -->
+    <div class="main">main</div>
+    
+    <!-- Add a <div> tag with the "footer" class -->
+    <div class="footer">footer</div>
+    
+  </body>
+</html>
+
+<!--
+The Header
+    Now that the basic layout is complete, let's work on some details.
+    We're first going to make a header like the one below.
+
+The Structure of the Header
+    Let's check out the structure of the header.
+    There is a "Progate" logo and a list.
+    Let's group these two parts using the <div> element as shown below.
+    
+Removing the Bullets from List Items
+    By applying the list-style property on an <li> element, you can remove the bullet points.
+    Since we don't want bullets for our list, let's set the list-style to none.
+-->
+## SEE EXAMPLE ON HTML & CSS I.css ##
+
+<!--
+Aligning the Header Horizontally
+    Generally, elements written in HTML are vertically aligned.
+    To horizontally align them, we need CSS.
+    Next, we'll learn how to create the layout shown below on the right.
+
+The Float Property
+    Using the float property, you can align targeted elements horizontally. As shown in the examples, specifying float: left; will arrange elements side by side from left to right.
+
+Aligning List Item Side by Side
+    Let's start arranging the list items in the header side by side.
+    By applying float: left; to every <li> element, you can align them horizontally from left to right.
+
+Aligning the Logo and the List
+    Next, let's place the header logo and the entire list side by side.
+    By applying float: left; to the header-logo as shown below, you can horizontally align the logo and the entire list.
+-->
+## SEE EXAMPLE ON HTML & CSS I.css ##
+
+<!--
+Adjusting Spaces
+    Let's adjust the spaces between the elements in the header so that both the logo and header list are placed in the appropriate positions as shown below.
+
+Adding Space to an Element
+    When you want to add some space to an element, the padding property comes in handy. By applying padding: 〇〇px;, the specified space is added to all sides of an element.
+
+Applying Padding to Only One Side
+    You may want to add padding to only one side of an element instead of all sides. In that case, you can apply padding independently by using properties like padding-top and padding-bottom.
+    For example, to add the top padding, set padding-top: 〇〇px;.
+
+Padding Shorthand
+    You can use shorthand when applying padding.
+    You can apply padding to multiple sides using only one property.
+    When four values are defined, padding is applied clockwise from the top. When two values are defined, padding is applied in the order of "top / bottom" and "right / left".
+-->
+## SEE EXAMPLE ON HTML & CSS I.css ##
+
+<!--
+The Footer
+    Next, we're going to work on the layout of the footer.
+    As with the header, let's check out the design and the structure.
+    On the left side of the footer is the logo, and on the right is the list.
+
+The Structure of the Footer
+    When we created the header, we applied float and padding to every <li> element. Because of that, the CSS properties are also applied to the <li> elements in the footer.
+    How do you think we can apply these CSS properties only to the <li> tags in the header?
+
+Nested Selectors
+    By adding li after header-list with a space in between, you can apply CSS to only the <li> elements in the header-list.
+    This allows you to apply different CSS to the <li> elements in the header from those in the footer.
+-->
+## SEE EXAMPLE ON HTML & CSS I.css ##
+
+<!--
+Rearranging the Logoand the List
+    Let's look at the images below.
+    The footer logo and list are respectively located at the far left and right.
+    We learned how to align elements from the left using float: left, but how do we place them on the right edge?
+
+float: right
+    With float: right, you can horizontally align the targeted elements from right to left.
+
+Positioning Elements Left and Right
+    By combining float: left; and float: right;, you can place the logo and the list in a row from left to right.
+    Let's apply float: left; to the footer-logo selector so that it is placed on the left edge. Also apply float: right; to the footer-list selector to move it to the right edge.
+-->
+## SEE EXAMPLE ON HTML & CSS I.css ##
+
+<!--
+The Main Layout
+    Let's move on to the main layout!
+    As shown below, it consists of three elements, copy-container, contents, and contact-form.
+    It may look a bit more complicated than other layouts we've created. But don't worry! We'll explain each step for you to follow along.
+
+Applying CSS to a Part of Text
+    In the image below, notice that the period (.) in the <h1> element "HELLO WORLD." is colored red. We'll show you how to apply CSS to only a part of a text.
+
+<span> Tag
+    You can apply CSS to a part of a text by putting it in a <span> tag. The images below illustrate this by applying color: red; to a span selector. 
+    There is no new line inserted before or after a <span> element.
+
+Block-Level and Inline Elements
+    In HTML, some elements start on a new line while others don't.
+    Block-level elements like divs contain a new line before and after the element, and extend to the full width of their parent element.
+    Inline elements like spans only take up as much width as necessary.
+-->
+## SEE EXAMPLE CSS ON HTML & CSS I.css ##
+<div class="main">
+    <!-- Add a <div> tag with the "copy-container" class -->
+    <div class="copy-container">
+      <h1>HELLO WORLD<span>.</span></h1>
+      <h2>Let's learn to code</h2>
+    </div>
+    
+    <!-- Add a <div> tag with the "contents" class -->
+    <div class="contents"></div>
+    
+    <!-- Add a <div> tag with the "contact-form" class -->
+    <div class="contact-form"></div>
+    
+  </div>
+
+<!--
+    The Content
+    The next part is the content.
+    First, let's make the layout of the content section.
+    We need the title and 4 contents-items.
+-->
+<div class="contents">
+    <h3>Lessons</h3>
+    <div class="contents-item">
+        <img src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/html/study/html.svg">
+        <p>HTML & CSS</p>
+    </div>
+    <div class="contents-item">
+        <img src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/html/study/php.svg">
+        <p>PHP</p>
+    </div>
+    <div class="contents-item">
+        <img src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/html/study/ruby.svg">
+        <p>Ruby</p>
+    </div>
+    <div class="contents-item">
+        <img src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/html/study/swift.svg">
+        <p>Swift</p>
+    </div>
+</div>
+
+<!--
+Borders
+    In the image below, the <h3> element has a border under it.
+    Let's learn how to add a border to an element on the next slide.
+
+Syntax for Borders
+    You can add a border with the border property.
+    As shown in the images, you can specify the thickness, style, and color.
+    Using the border property will apply a border to all sides. 
+    If you want to add it only to a specific side, use one of the following properties: border-bottom, border-top, border-left, or border-right.
+-->
+## SEE EXAMPLE ON HTML & CSS I.css ##
+
+<!--
+Space Inside andOutside of Borders
+    As shown below, there are spaces added above and below the border.
+    On the next slide, we're going to learn how to add space inside and outside of a border.
+
+Padding and Margin
+    Earlier, we used the padding property to create space around an element. However, the padding adds space inside its border.
+    The margin property, though, adds space outside the border.
+    You can specify the values just like you did for the padding.
+
+The Box Model
+    The border, padding, and margin properties we've covered so far are based on the concept of the box model.
+    Every HTML element has a border (most are not visible by default).
+    The space outside the border is margin, and the inside is padding.
+
+Margin Shorthand
+    Just like the padding property, you can specify multiple margins in each direction individually, or all at once using only one property.
+-->
+## SEE EXAMPLE ON HTML & CSS I.css ##
+
+<!--
+    Forms
+    Finally, let's make an inquiry form just like the one below!
+-->
+<div class="contact-form">
+    <!-- Add a <h3> tag with the "section-title" class -->
+      <h3 class="section-title">Contact Us</h3>
+    
+    <!-- Add three <p> tags below -->
+    <p>Email (Required)</p>
+    <p>Message (Required)</p>
+    <p> * Required fields must be filled.</p>
+    
+</div>
+
+<!--
+<input> and <textarea> Tags
+    Let's see how to make input fields.
+    The <input> tag is used for receiving a single line of text while the <textarea> tag is suitable for a multiline text.
+    Note that the <input> tag doesn't require a closing tag.
+
+Submit Button
+    We can also create a submit button by adding the type attribute to an <input> element. When you set the type attribute to submit, the <input> element becomes a submit button like the image below.
+    By default, the text displayed on the button is "Submit" in English browsers.
+
+Value Attribute
+    If you wish, you can change the text displayed on a submit button by specifying the value attribute.
+-->
+<form>
+    <p>input element</p>
+    <input>                         <!-- display an input field for a single line -->
+    <p>textarea element</p>
+    <textarea></textarea>           <!-- display an input field for multiple lines -->
+</form>
+
+<input type="submit">               <!-- submit button -->
+
+<input type="submit" value="send">  <!-- changes the text displayed on the button -->
+
+<!--
+Applying CSS to Multiple Selectors
+    You can group the same CSS by separating multiple selectors with a comma , as shown in the center image. By doing so, you can apply the same CSS to different selectors.
+    For our website, let's apply the same CSS to <input> and <textarea> elements using this method.
+-->
+## SEE EXAMPLE CSS ON HTML & CSS I.css ##
+
+<h1>Hello World</h1>
+<p>Welcome to Progate !</p>
+
+<!-- HTML & CSS I END CODE -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Progate</title>
+    <link rel="stylesheet" href="stylesheet.css">
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-logo">Progate</div>
+      <div class="header-list">
+        <ul>
+          <li>About</li>
+          <li>Lessons</li>
+          <li>Contact us</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="copy-container">
+        <h1>HELLO WORLD<span>.</span></h1>
+        <h2>Let's learn to code</h2>
+      </div>
+      
+      <div class="contents">
+        <h3 class="section-title">Lessons</h3>
+        <div class="contents-item">
+          <img src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/html/study/html.svg">
+          <p>HTML & CSS</p>
+        </div>
+        <div class="contents-item">
+          <img src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/html/study/php.svg">
+          <p>PHP</p>
+        </div>
+        <div class="contents-item">
+          <img src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/html/study/ruby.svg">
+          <p>Ruby</p>
+        </div>
+        <div class="contents-item">
+          <img src="https://s3-ap-northeast-1.amazonaws.com/progate/shared/images/lesson/html/study/swift.svg">
+          <p>Swift</p>
+        </div>
+      </div>
+      
+      <div class="contact-form">
+        <h3 class="section-title">Contact us</h3>
+        <p>Email (Required)</p>
+        <!-- Add an <input> tag -->
+        <input>
+        
+        <p>Message (Required)</p>
+        <!-- Add a <textarea> tag --> 
+        <textarea></textarea>
+        
+        <p>* Required fields must be filled</p>
+        <!-- Add an <input> tag -->
+        <input class="contact-submit" type="submit" value="Send">
+        
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="footer-logo">Progate</div>
+      <div class="footer-list">
+        <ul>
+          <li>About</li>
+          <li>Jobs</li>
+          <li>Contact us</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

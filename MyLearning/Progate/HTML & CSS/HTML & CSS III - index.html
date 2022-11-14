@@ -1,0 +1,327 @@
+<!-- HTML & CSS III -->
+
+<!--
+Responsive Web Design
+    In this lesson, we'll be applying Responsive Web Designto the web page we developed in the previous lesson.
+    Responsive Web Design adapts to all types of screen sizes and devices to display the contents of the website.
+    It’s especially important for website creation considering the necessity to display on smartphones.
+-->
+
+<!--
+Applying Responsive Web Design
+    By applying responsive web design to the website created during the previous lesson, you can change the layout display to fit screen size, as seen in the image below.
+-->
+
+<!--
+Media Queries
+    From here on, we'll be learning about media queries.
+    They allow you to specify different CSS depending on the size of the device.
+
+Using Media Queries
+    Let's learn how to write media queries.
+    The syntax is as follows: @media (condition) { .... }.
+    The CSS inside { } will be applied only when the condition is met.3
+
+max-width and min-width
+    We can specify the max-width or the min-width as a condition.
+    When max-width: 1000px is specified, the CSS will be applied only when the width of the screen is 1000px or less.
+    On the other hand, with min-width the CSS will be applied when the width of the screen is the specified size or more.
+
+Breakpoints
+    The value you specify for the max-width or the min-width is called a breakpoint.
+    We'll be using 670px as the breakpoint for smartphones, and 1000px for tablets.
+-->
+
+## CHECK CSS code ON HTML & CSS III - stylesheet.css ##
+
+<!--
+Layout with Media Queries
+    In the previous lesson, we learned how to change the color of the text based on the width of the device.
+    Now let's learn how to change the layout.
+
+Changing the Width Using Media Queries
+    When you have several items in a row, they will look too small when displayed on smaller devices.
+    Let's fix this by changing the width of each item for smaller devices.
+-->
+
+## CHECK CSS code ON HTML & CSS III - stylesheet.css ##
+
+<!--
+box-sizing
+    The image on the left shows what would happen if we added padding to the items in the previous exercise. 
+    Having four items with 25% width along with the padding will cause the width to be greater than 100%, and so the last item will not fit.
+    We can fix this using box-sizing: border-box;.
+
+How box-sizing Works
+    By setting the box-sizing property to border-box, an element's width will include the padding and the border.
+    Therefore, the layout will not break when you add padding or border (this is not the case with margin).
+
+Applying CSS to All Elements
+    You can use the * selector when you want to apply CSS to all the elements, like in the image below.
+    It's a good practice to apply box-sizing: border-box; to all the elements because it will make it easier to adjust the layout of the web page.
+-->
+
+## CHECK CSS code ON HTML & CSS III - stylesheet.css ##
+
+<!--
+Making Your Page Responsive
+We've learned the basics of Responsive Web Design. Let's put it into practice by applying it to the web page that we made in the previous lesson. 
+To begin, we have a few things that we need to prepare.
+
+viewport
+In preparation for applying Responsive Web Design to the page, let's set the viewport inside the <head> tag. 
+Without the viewport, the media queries won't function properly on tablets and smartphones. You don't have to memorize the content of the viewport.
+
+width: 100%
+In the previous lesson, we had the width fixed to 1170px, so it won't fit into devices with smaller screens. 
+Let's change the width to 100% so that it fills whatever the width for any device.
+-->
+
+<meta name="viewport" content="width= device-width, initial-scale=1.0">             <!-- set the viewport -->
+
+<!-- Example -->
+
+<head>
+    <meta charset="utf-8">
+    <!-- Set the viewport using a <meta> tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Progate</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+
+## CHECK CSS code ON HTML & CSS III - stylesheet.css ##
+
+<!--
+Loading responsive.css
+    We could write our media queries in stylesheet.css, but we'll put them in a different file, responsive.css, to keep our CSS organized.
+    Make sure that you load responsive.css below the viewport.
+
+The Width of lesson
+    Let's start with the layout for tablets.
+    With tablets, there isn't enough width to fit four lessons in one row.
+    Let's fix this by placing only two lessons in one row.
+    We can do this by changing the width of lesson to 50%.
+-->
+
+<link rel="stylesheet" href="responsive.css">              <!-- load responsive css -->
+
+
+## CHECK CSS code ON HTML & CSS III - responsive.css ##
+
+<!--
+Fixing the Background
+    Since we've changed the lessons to be shown in two rows, they no longer fit inside the section with the background color.
+    This is because the height of lesson-wrapper is fixed to 580px.
+    Let's remove this so that the height of lesson-wrapper will be determined by its children.
+
+float and the Parent Element
+    By default, an element's height is determined by that of its children.
+    But this is not the case when all the child elements have float applied, in which case the height of the parent will be 0.
+    This is because the floating elements will not affect the parent.
+
+Clearing the float
+    Let's learn how to add height to an element with floating children.
+    We can do this by adding an empty <div> tag with clear: left; applied.
+    clear: left; cancels the children's float state, so their height will affect the parent element's height.
+-->
+
+<div class="lesson-wrapper">
+    <div class="container">
+      <div class="heading">
+        <h2>Learn Where to Get Started!</h2>
+      </div>
+      <div class="lessons">
+        <div class="lesson">
+          <div class="lesson-icon">
+            <img src="https://prog-8.com/images/html/advanced/html.png">
+            <p>HTML & CSS</p>
+          </div>
+          <p class="text-contents">Languages used to build and design the appearances of your websites. HTML adds the structure, and CSS styles it.</p>
+        </div>
+        <div class="lesson">
+          <div class="lesson-icon">
+            <img src="https://prog-8.com/images/html/advanced/jQuery.png">
+            <p>jQuery</p>
+          </div>
+          <p class="text-contents">A fast, feature-rich and easy-to-use JavaScript library that handles animations and Ajax requests.</p>
+        </div>
+        <div class="lesson">
+          <div class="lesson-icon">
+            <img src="https://prog-8.com/images/html/advanced/ruby.png">
+            <p>Ruby</p>
+          </div>
+          <p class="text-contents">A dynamic, general-purpose language that is simple and productive. It is commonly used around the world to build web applications.</p>
+        </div>
+        <div class="lesson">
+          <div class="lesson-icon">
+            <img src="https://prog-8.com/images/html/advanced/php.png">
+            <p>PHP</p>
+          </div>
+          <p class="text-contents">An open source scripting language that can be embedded into HTML, and well suited for web development.</p>
+        </div>
+        <!-- Add a <div> tag with the clear class -->
+        <div class="clear"></div>
+        
+      </div>
+    </div>
+  </div>
+
+<!--
+The Smartphone Layout
+    Now let's work on the layout for smartphones.
+    We'll set the breakpoint to 670px.
+    Let's first change the width of lesson to 100% to make a single column layout.
+
+Aligning the footer
+    Also, let's set the footer to align in the center when viewed from smartphone devices.
+-->
+
+## CHECK code ON HTML & CSS III - responsive.css ##
+
+<!--
+Adjusting the Buttons
+    Next, let's make the buttons spread to the full-width so that they are easier to tap.
+    We'll also adjust the margin between the buttons.
+-->
+
+## CHECK code ON HTML & CSS III - responsive.css ##
+
+<!--
+Making the font-size Responsive
+    Smaller fonts will fit better in a smaller screen.
+    So, let's adjust the font for each device.
+-->
+
+## CHECK code ON HTML & CSS III - responsive.css ##
+
+<!--
+Handling Large Screens
+    We've learned how to adjust the layout for smaller devices.
+    What about devices with larger screens?
+    For example, if we viewed our web page on a 2000px screen, the lessons will be too far apart from each other.
+
+max-width
+    Since we've set the width of container to 100%, it will become too
+    big on a larger screen. We can fix this by setting the max-width.
+    In the example, we've set the max-width to 1170px, so the content inside will always be contained within this limit.
+-->
+
+## CHECK code ON HTML & CSS III - stylesheet.css ##
+
+<!--
+Making the Header Responsive
+    To finish off, let's apply a different header for smartphones.
+    Since the whole menu won't fit, we'll display a menu icon instead.
+    (This way, you can display the menu when the icon is tapped.)
+
+Hiding and Showing Elements
+    We'll hide the menu icon by default and only display it when the device width is 670px or less.
+    To hide an element, we can use display: none;.
+    To display a hidden element, we can use display: block;.
+-->
+
+<a href="#" class="menu icon">
+    <span class="fa fa-bars"></span>
+</a>
+
+## CHECK code ON HTML & CSS III - stylesheet.css & responsive.css ##
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progate</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-left">
+          <img class="logo" src="https://prog-8.com/images/html/advanced/main_logo.png">
+        </div>
+        <!-- Add a menu icon here -->
+        <span class="fa fa-bars menu-icon"></span>
+  
+        <div class="header-right">
+          <a href="#">Lessons</a>
+          <a href="#">Sign in</a>
+          <a href="#" class="login">Log in</a>
+        </div>
+      </div>
+    </header>
+    <div class="top-wrapper">
+      <div class="container">
+        <h1>LEARN TO CODE.</h1>
+        <h1>LEARN TO BE CREATIVE.</h1>
+        <p>Progate is a web service where you can learn programming online.</p>
+        <p>We offer you a fully equipped coding environment to get you started.</p>
+        <div class="btn-wrapper">
+          <a href="#" class="btn signup">Sign up with Email</a>
+          <p>or</p>
+          <a href="#" class="btn facebook"><span class="fa fa-facebook"></span>Sign up with Facebook</a>
+          <a href="#" class="btn twitter"><span class="fa fa-twitter"></span>Sign up with Twitter</a>
+        </div>
+      </div>
+    </div>
+    <div class="lesson-wrapper">
+      <div class="container">
+        <div class="heading">
+          <h2>Learn Where to Get Started!</h2>
+        </div>
+        <div class="lessons">
+          <div class="lesson">
+            <div class="lesson-icon">
+              <img src="https://prog-8.com/images/html/advanced/html.png">
+              <p>HTML & CSS</p>
+            </div>
+            <p class="text-contents">Languages used to build and design the appearances of your websites. HTML adds the structure, and CSS styles it.</p>
+          </div>
+          <div class="lesson">
+            <div class="lesson-icon">
+              <img src="https://prog-8.com/images/html/advanced/jQuery.png">
+              <p>jQuery</p>
+            </div>
+            <p class="text-contents">A fast, feature-rich and easy-to-use JavaScript library that handles animations and Ajax requests.</p>
+          </div>
+          <div class="lesson">
+            <div class="lesson-icon">
+              <img src="https://prog-8.com/images/html/advanced/ruby.png">
+              <p>Ruby</p>
+            </div>
+            <p class="text-contents">A dynamic, general-purpose language that is simple and productive. It is commonly used around the world to build web applications.</p>
+          </div>
+          <div class="lesson">
+            <div class="lesson-icon">
+              <img src="https://prog-8.com/images/html/advanced/php.png">
+              <p>PHP</p>
+            </div>
+            <p class="text-contents">An open source scripting language that can be embedded into HTML, and well suited for web development.</p>
+          </div>
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+    <div class="message-wrapper">
+      <div class="container">
+        <div class="heading">
+          <h2>Ready to become an awesome programmer?</h2>
+          <h3>Let's learn to code, learn to be creative!</h3>
+        </div>
+        <span class="btn message">Start Learning</span>
+      </div>
+    </div>
+    <footer>
+      <div class="container">
+        <img src="https://prog-8.com/images/html/advanced/footer_logo.png">
+        <p>Learn to code, learn to be creative.</p>
+      </div>
+    </footer>
+  </body>
+</html>
