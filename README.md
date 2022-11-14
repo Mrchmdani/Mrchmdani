@@ -1,6 +1,3 @@
-# Mrachmandani
-https://github.com/Mrchmdani/Mrchmdani
-
 ## MyLearning
 https://github.com/Mrchmdani/Mrchmdani/tree/master/MyLearning
 01. Coursera https://github.com/Mrchmdani/Mrchmdani/tree/master/MyLearning/Coursera
@@ -24,7 +21,7 @@ https://github.com/Mrchmdani/Mrchmdani/tree/master/MyLearning
     * HTML & CSS https://github.com/Mrchmdani/Mrchmdani/tree/master/MyLearning/Progate/HTML%20%26%20CSS
     * Python https://github.com/Mrchmdani/Mrchmdani/tree/master/MyLearning/Progate/Python
 06. Udemy https://github.com/Mrchmdani/Mrchmdani/tree/master/MyLearning/Udemy
-* Python-programming-beginner-to-advanced https://github.com/Mrchmdani/Mrchmdani/tree/master/MyLearning/Udemy/Python-programming-beginner-to-advanced
+    * Python-programming-beginner-to-advanced https://github.com/Mrchmdani/Mrchmdani/tree/master/MyLearning/Udemy/Python-programming-beginner-to-advanced
 
 ## MyProject 
 https://github.com/Mrchmdani/Mrchmdani/tree/master/MyProject
