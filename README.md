@@ -1,4 +1,5 @@
 ## MyLearning
+
 https://github.com/Mrchmdani/Mrchmdani/tree/master/MyLearning
 01. Coursera https://github.com/Mrchmdani/Mrchmdani/tree/master/MyLearning/Coursera
     * Google Data Analytics Professional Certificate https://github.com/Mrchmdani/Mrchmdani/tree/master/MyLearning/Coursera/Google%20Data%20Analytics%20Professional%20Certificate
@@ -22,11 +23,13 @@ https://github.com/Mrchmdani/Mrchmdani/tree/master/MyLearning
     * Python https://github.com/Mrchmdani/Mrchmdani/tree/master/MyLearning/Progate/Python
 06. Udemy https://github.com/Mrchmdani/Mrchmdani/tree/master/MyLearning/Udemy
     * Python-programming-beginner-to-advanced https://github.com/Mrchmdani/Mrchmdani/tree/master/MyLearning/Udemy/Python-programming-beginner-to-advanced
+07. The Data Science Course 2022 - Complete Data Science Bootcamp
+    * https://github.com/Mrchmdani/Mrchmdani/tree/master/MyLearning/Udemy/The%20Data%20Science%20Course%202022%20-%20Complete%20Data%20Science%20Bootcamp
 
-## MyProject 
+## MyProject
+
 https://github.com/Mrchmdani/Mrchmdani/tree/master/MyProject
 01. Data Analysis - Jovian - Course Project - COVID-19 Analysis in Indonesia
 https://github.com/Mrchmdani/Mrchmdani/tree/master/MyProject/Data%20Analysis%20-%20Jovian%20-%20Course%20Project%20-%20COVID-19%20Analysis%20in%20Indonesia
 02. Golang - DTSPRO - Tasking (To Do List)
 https://github.com/Mrchmdani/Mrchmdani/tree/master/MyProject/Golang%20-%20DTSPRO%20-%20Tasking%20(To%20Do%20List)
-
